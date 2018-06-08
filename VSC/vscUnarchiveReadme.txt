@@ -1,0 +1,10 @@
+VSCs archival check/enablement:
+a)	Open Task Scheduler (use the search field at the lower left of the taskbar) and select the Task Scheduler Library container. From the list of scheduled tasks at the center pane, select the MSIT-ISRM-Archive-Legacy-vSC task and scroll to the right to check the Last Run Result column value. If it reads the operation completed successfully, please proceed with the next step. 
+a.	If it reports The task has not yet run, please logoff and logon again and open Task Scheduler to check the status. If it still shows as not yet run, right-click the task and select Run to run it manually. Please let me know if you needed to do this, seems like a recurring issue.
+b)	Run certmgr.msc and click Personal at the top of the left pane. From the main menu at the top, click View -> Options and in the resulting window, click to select Archived certificates. Click OK.
+c)	Now, double-click Personal and click Certificates. At the right pane, you will see a bunch of certificates and one of the columns there named Status. Please check to see if any of the certificates issued by MSIT User CA 1 or 2 have Status set to A. 
+d)	If yes, please open Device Manager. Click Smart card readers – there should be at least one reader named FIM CM Virtual Smart Card or Virtual Smartcard. It/they should be disabled (an arrow facing down should be seen inside their small icons to the left.) If they are not, please run gpupdate /force and run the procedure again.
+
+Unarchiving VSCs:
+a)	To re-enable your VSC(s), copy vSCunarchive.ps1 locally from \\scratch2\scratch\dipapits\vSC-cleanup and run it from an admin PS prompt. You should now be able to again see your VSC(s) from both the logon screen and certpicker. Also, logging off and on will not disable again your VSCs – please check this as well.
+b)	If you notice anything unusual, please send me a short email of the experience – you should not see a VSC option anymore to log in locally to the device or a VSC option to authenticate via ADFS and you should not face any other problems. You will be able to logon normally with a Passport PIN (the script checks for its existence before archiving VSCs).
