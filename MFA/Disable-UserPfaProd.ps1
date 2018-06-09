@@ -1,5 +1,5 @@
 ﻿
-$GroupToExpand = 'CSS_2FA_Restricted'
+$GroupToExpand = '<replacewithadsggroup>'
 $error.clear()
 Import-Module E:\drop\Share\MS.IT.PhoneAuth.PFClient.dll
 
@@ -20,9 +20,9 @@ Import-Module E:\drop\Share\MS.IT.PhoneAuth.PFClient.dll
 
 #region PfClient
 
-    $sdkClientCert = Get-Item Cert:\LocalMachine\my\370E35647A32201D088DEF7D84B3A3B51453BA02
+    $sdkClientCert = Get-Item Cert:\LocalMachine\my\<thumbprint>
 
-    $pfwsdkUrl = "https://pfa.corp.microsoft.com/multifactorauthwebservicesdk/PfWsSdk.asmx"
+    $pfwsdkUrl = "https://<mfaendpoint>/multifactorauthwebservicesdk/PfWsSdk.asmx"
 
     $pfwssdk = New-Object MS.IT.PhoneAuth.PFClient.pfwssdk.PfWsSdk
 
@@ -43,7 +43,7 @@ foreach ($user in $users) {
 
     try {
 
-        $ext = Get-ADUser -Identity $user -Properties UserPrincipalName -Server corp.microsoft.com:3268        
+        $ext = Get-ADUser -Identity $user -Properties UserPrincipalName -Server adserver.domain.com:3268        
         
     }
     catch {
@@ -101,7 +101,7 @@ foreach ($user in $users) {
 #region Create Reports
 
     $localpatherrors = 'E:\Scripts\errors.csv'
-    $localpathpfaresults = 'E:\Scripts\pfaresults.csv'
+    $localpathpfaresults = 'E:\Scripts\mfaresults.csv'
 
     $pfaresults | Select-Object UserPrincipalName, DisabledInPfa, PfwsSdkError, Comment | Export-Csv -Path $localpathpfaresults -NoTypeInformation
     $errors | Export-Csv -Path $localpatherrors -NoTypeInformation
