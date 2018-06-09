@@ -20,13 +20,13 @@ Find-Module
 Find-DscResource
 
 # Install a module
-Install-Module -Name xWebAdministration
+Install-Module -Name xWebAdministration # Manage a website in IIS
 
 # Check the target node for the desired installed features
-Get-WindowsFeature -ComputerName trmye2012r2vm -Name Web-Server, Web-ASP*
+Get-WindowsFeature -ComputerName servername -Name Web-Server, Web-ASP*
 
 # Apply the desired state which will assert IIS and ASP.NET 4.5 are installed
-Start-DscConfiguration -ComputerName trmye2012r2vm -Path IISWebSite -Wait -Verbose
+Start-DscConfiguration -ComputerName servername -Path ConfigIIS -Wait -Verbose
 
 Get-Module
 
