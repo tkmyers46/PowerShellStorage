@@ -1,20 +1,11 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# PowerShell basic scripts 
+Some PowerShell basic scripts to learn more 'why'. Illustrates some environment specifics and nuances about the language. 
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
-
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+# Clone the repository
+Get a local copy of the scripts, best if opened with PowerShell IDE (Integrated Development Environment)
+1.	Click on 'PowerShellStorage' then click 'Clone'
+2.	Paste that URL into Visual Studio or use Git Command Line
 
 # Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
-
-If you want to learn more about creating good readme files then refer the following [guidelines](https://www.visualstudio.com/en-us/docs/git/create-a-readme). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
+Add or correct the comments in the scripts, or create your own.
 - [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
