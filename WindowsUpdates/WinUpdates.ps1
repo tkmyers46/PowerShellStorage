@@ -1,2 +1,0 @@
-﻿#Command usage
-WMIC.exe /?
