@@ -11,5 +11,5 @@
 #On both computers, the certificate must be installed in the LocalComputer\Personal store.
 
 #To verify the permission on the certificate's private key, the following command can be used:
-winhttpcertcfg -l -c LOCAL_MACHINE\My -s "PhoneRegistration.corp.microsoft.com"
-winhttpcertcfg -l -c TRMYE2012R2VM\administrator -s "PhoneRegistration.corp.microsoft.com"
+winhttpcertcfg -l -c LOCAL_MACHINE\My -s "<endpoint.domain.com>"
+winhttpcertcfg -l -c TRMYE2012R2VM\administrator -s "<endpoint.domain.com>"
