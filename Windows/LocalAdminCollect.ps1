@@ -18,11 +18,11 @@
     $ServerName = ([System.Net.Dns]::GetHostByName(($CN))).HostName
     $servernamefqdn = $servername
     $servernamefqdnquote = '"' + $servernamefqdn + '"'
-	$outputPath = "\\redmond\saw\scratch\adminscripts\output\gpo\" + $servernamefqdn + ".gpo"   
-	$secondOutputPath = "\\co1sassrvdata01.redmond.corp.microsoft.com\AdminDataOutput\"
+	$outputPath = "\\filesharepath\" + $servernamefqdn + ".gpo"   
+	$secondOutputPath = "\\filesharepath\"
 
 #Execute Data Collection (via Omniscient)
-    $cmd = "\\redmond\saw\scratch\AdminScripts\Omniscient.exe -T=" + $servernamefqdnquote + " -sd --tsv=" + $outputPath   
+    $cmd = "\\filesharepath\Omniscient.exe -T=" + $servernamefqdnquote + " -sd --tsv=" + $outputPath   
     invoke-expression $cmd
 	$fullPath = $outputPath + "_groups.tsv"
 	copy-item $fullPath $secondOutputPath
@@ -48,12 +48,12 @@
     $assetline = "<asset number=" + '"' + $asset.trim() + '"' + " />"
     $filecontents += $assetline
     $filecontents += '</sysinfo>'
-    $assetfilepath = "\\co1sassrvdata01.redmond.corp.microsoft.com\admindataoutput\asset\" + $servernamefqdn + ".xml"
+    $assetfilepath = "\\servername\fileshare\" + $servernamefqdn + ".xml"
     $filecontents | out-file $assetfilepath
 
 
     
-    $taskxmlpath = "\\redmond.corp.microsoft.com\saw\scratch\adminscripts\adminaudit\AdminAudit.XML"
+    $taskxmlpath = "\\servername\fileshare\AdminAudit.XML"
     $taskxmlcontents = get-content $taskxmlpath | Out-String
     [xml]$taskxml = get-content $taskxmlpath
     $taskname = "AdminAudit"
@@ -97,9 +97,9 @@
      }
 
 
-Invoke-Expression "powershell.exe -executionpolicy bypass -file '\\redmond\saw\Scratch\AdminScripts\SAWEnforcementNotifier\register-SAWEnforceNotifier.ps1'"
+Invoke-Expression "powershell.exe -executionpolicy bypass -file '\\servername\fileshare\register-SAWEnforceNotifier.ps1'"
 
-$p7b = '\\redmond\saw\Scratch\AdminScripts\sas.msft.net.p7b'
+$p7b = '\\servername\fileshare\certificatename.p7b'
 try
 {
     Import-Certificate2 -FilePath $p7b -CertStoreLocation Cert:\LocalMachine\Root
@@ -117,7 +117,7 @@ if ($env:computerName)
     if (!($service) -or $service.status -eq "Stopped")
     {
     write-host "   Installing"
-    $install = 'msiexec /i "\\redmond\saw\scratch\adminscripts\adminaudit\clientservice\1.0.0.6\Microsoft.SAS.Audit.ClientService.Installer.msi" /quiet'
+    $install = 'msiexec /i "\\\Microsoft.SAS.Audit.ClientService.Installer.msi" /quiet'
     invoke-expression $install
 
     start-sleep 15
