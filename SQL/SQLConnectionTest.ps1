@@ -1,2 +1,2 @@
-﻿sqlcmd -s trmye2012r2vm\sharepoint -e
-sqlcmd /S trmye2012r2vm\sharepoint -U redmond\trmye -P Km9345**!!
+﻿sqlcmd -s server\sharepoint -e
+sqlcmd /S server\sharepoint -U domain\alias -P <password>
