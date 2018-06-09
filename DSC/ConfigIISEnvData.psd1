@@ -12,6 +12,6 @@
     );
 
     NonNodeData = @{
-        Administrators = @("domain\username")
+        Administrators = @("domain\administrator1", domain\administrator2)
     }
 }
