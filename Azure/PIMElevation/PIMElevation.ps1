@@ -14,7 +14,7 @@ Parameters
     No Parameters just read-hosts
 #>
 #Author
-#    ytisoni
+#    
 #Change History
 #     6/15/2016 - initial script
 #     6/15/2016 - Added code to get the current username so you don't need to input it
@@ -24,18 +24,18 @@ Parameters
 #region - Initializing global variables
 
 #this guid is for company administrator
-$roleGUID = "62e90394-69f5-4237-9190-012177145e10"
+$roleGUID = ""
 
 #endregion
 
 try
 {
-    Write-Host "You are executing the PIM elevation tool to elevate to global admin to the MS AAD Tenant" -ForegroundColor Green
+    Write-Host "You are executing the PIM elevation tool to elevate to global admin to an AAD Tenant" -ForegroundColor Green
     $elevationReason = Read-Host "Input your reason to elevate"
     
     $userName = [Environment]::UserName
-    #concatenating @microsoft.com as we only have those UPNs as GA
-    $UPN = $userName + "@microsoft.com"
+    #concatenating @domain.com as we only have those UPNs as GA
+    $UPN = $userName + "@domain.com"
   
     #connecting to PIM service and then enabling GA elevation
     Connect-PimService -UserName $UPN 
