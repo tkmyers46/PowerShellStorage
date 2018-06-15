@@ -10,6 +10,9 @@ Get a local copy of the scripts, best if opened with PowerShell IDE (Integrated 
 5.  git clone https://github.com/tkmyers46/PowerShellStorage.git
 6.  You should now have a folder 'PowerShellStorage' with the folders and scripts
 
+# Git for Windows
+[Download Git](https://git-scm.com/downloads)
+
 # Contribute
 Add or correct the comments in the scripts, or create your own.
 - [Visual Studio Code](https://github.com/Microsoft/vscode)
