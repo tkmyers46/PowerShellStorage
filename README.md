@@ -15,6 +15,7 @@ Get a local copy of the scripts, best if opened with PowerShell IDE (Integrated 
 # Git for Windows
 [Download Git](https://git-scm.com/downloads)
 - [How do I 'clone' a repository?](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository)
+- [Clone a repository in Visual Studio](https://docs.microsoft.com/en-us/azure/devops/repos/git/clone?view=vsts&tabs=visual-studio)
 
 # Contribute
 Add or correct the comments in the scripts, or create your own.
