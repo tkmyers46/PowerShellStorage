@@ -8,7 +8,7 @@ Get a local copy of the scripts, best if opened with PowerShell IDE (Integrated 
 2. Click 'Clone or download' (Green button)
 3. Click the clipboard icon next to the url https://github.com/tkmyers46/PowerShellStorage.git
 4. Paste that URL into Visual Studio or use Git Command Line
-5. [Install Git](https://git-scm.com/downloads)
+5. [Install Git.](https://git-scm.com/downloads) Instructions for cloning are below under 'Git for Windows'
 6. After installing git, paste this in your favorite shell/cmd: ```git clone https://github.com/tkmyers46/PowerShellStorage.git```
 7. You should now have a folder 'PowerShellStorage' with the folders and scripts
 
