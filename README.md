@@ -3,12 +3,14 @@ Some PowerShell basic scripts to learn more 'why'. Illustrates some environment 
 
 # Clone the repository
 Get a local copy of the scripts, best if opened with PowerShell IDE (Integrated Development Environment)
-1.	Click on 'PowerShellStorage' (The blue bread crumb link tkmyers46/PowerShellStorage)
-2.  Click 'Clone or download' (Green button)
-3.  Click the clipboard icon next to the url https://github.com/tkmyers46/PowerShellStorage.git
-4.	Paste that URL into Visual Studio or use Git Command Line
-5.  After installing git, paste this into your favorite shell/cmd: ```git clone https://github.com/tkmyers46/PowerShellStorage.git```
-6.  You should now have a folder 'PowerShellStorage' with the folders and scripts
+
+1. Click on 'PowerShellStorage' (The blue bread crumb link tkmyers46/PowerShellStorage)
+2. Click 'Clone or download' (Green button)
+3. Click the clipboard icon next to the url https://github.com/tkmyers46/PowerShellStorage.git
+4. Paste that URL into Visual Studio or use Git Command Line
+5. [Install Git](https://git-scm.com/downloads)
+6. After installing git, paste this in your favorite shell/cmd: ```git clone https://github.com/tkmyers46/PowerShellStorage.git```
+7. You should now have a folder 'PowerShellStorage' with the folders and scripts
 
 # Git for Windows
 [Download Git](https://git-scm.com/downloads)
